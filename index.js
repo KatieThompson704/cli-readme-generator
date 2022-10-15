@@ -1,3 +1,5 @@
+const generateMarkdown = require("./utils/generateMarkdown");
+
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
@@ -6,47 +8,22 @@ const fs = require("fs");
 const questions = [
   {
     type: "input",
-    message: "What is your github username?",
-    name: "username",
+    message: "1. What is the Project Title?",
+    name: "projectTitle",
   },
   {
     type: "input",
-    message: "What is your email address?",
-    name: "email",
+    message: "2.	What is the Project Description?",
+    name: "projectdescription",
   },
   {
     type: "input",
-    message: "Please enter the title of your application",
-    name: "title",
-  },
-  {
-    type: "input",
-    message: "Please enter a description of your application",
-    name: "description",
-  },
-  {
-    type: "input",
-    message: "Please enter installation instructions for your application",
-    name: "installation",
-  },
-  {
-    type: "input",
-    message: "Please enter usage information for your application",
-    name: "usage",
-  },
-  {
-    type: "input",
-    message: "Please enter contribution guidelines for your application",
-    name: "contribution",
-  },
-  {
-    type: "input",
-    message: "Please enter test instructions for your application",
-    name: "testinstruction",
+    message: "3. What are the Usage Instructions for this project?",
+    name: "instructions",
   },
   {
     type: "list",
-    message: "Please choose a license for your application",
+    message: "4. What License is required for this project? ",
     choices: [
       "MIT",
       "GPLv2",
@@ -58,45 +35,41 @@ const questions = [
     ],
     name: "license",
   },
+  {
+    type: "input",
+    message: "5. What is your github username?",
+    name: "username",
+  },
+  {
+    type: "input",
+    message: "6. What is your email address?",
+    name: "email",
+  },
+  {
+    type: "input",
+    message: "7. ",
+    name: "installation",
+  },
+  {
+    type: "input",
+    message: "8. List any contributors to your project",
+    name: "contributing",
+  },
+  {
+    type: "input",
+    message: "9.",
+    name: "test",
+  },
 ];
-inquirer.prompt(questions).then((answers) => {
-  const FILENAME =
-    answers.title.toLowerCase().split(" ").join("") + "_README.json";
-  fs.writeFile(FILENAME, JSON.stringify(answers), (err) => {
-    err ? console.error(err) : console.log("Successfully wrote to file");
-  });
 
-  // TODO: Create a function to write README file
-  let generateREADME = `# ${answers.title}
-${answers.description}
-## Table of Contents
-<ul>
-<li><a href="#install">Installation Instructions</a></li>
-<li><a href="#usage">Usage Information</a></li>
-<li><a href="#contribution">Contribution Guidelines</a></li>
-<li><a href="#test-instr">Test Instructions</a></li>
-<li><a href="#license">License</a></li>
-<li><a href="#contactme">Contact Me</a></li>
-</ul>
-<h2 id="#install">Installation Instructions</h2>
-${answers.installation}
-<h2 id="usage">Usage Information</h2>
-${answers.usage}
-<h2 id="contribution">Contribution Guidelines</h2>
-${answers.contribution}
-<h2 id="test-instr">Test Instructions</h2>
-${answers.testinstruction}
-<h2 id="license">License</h2>
-${answers.license}
-<h2 id="contactme">Contact Me</h2>
-For any additional questions please reach out to me by email at: ${answers.email}</br>
-Feel free to check out my other repositories on github! My username is ${answers.username}</br>
-Click HERE to be routed to my github account`;
-  fs.writeFile(generateREADME + "_README.md");
-});
+// TODO: Create a function to write README file
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+  inquirer.prompt(questions).then((answers) => {
+    fs.writeFileSync("README.md", generateMarkdown(answers));
+  });
+}
 
 // Function call to initialize app
 init();
