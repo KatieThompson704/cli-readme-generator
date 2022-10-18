@@ -55,16 +55,23 @@ ${renderLicenseLink(data.license)}
 ### Description 
 ${data.projectdescription}
 
+
 ### Installation
+${data.installation}
+
 
 ### Usage
+${data.usage}
 
 
 ### Test
+${data.test}
+
 
 ${renderLicenseSection(data.license)}
 
 ### Contributing
+${data.contributing}
 
 
 ### Contact

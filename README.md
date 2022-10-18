@@ -1,30 +1,38 @@
-# d
+# cli-readme-generator
 
 ![MIT](https://img.shields.io/badge/license-MIT-blue)
 
 ## Table of Contents
-
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Contributing](#contributing)
 - [Test](#test)
 - [License](#license)
 - [Contact](#contact)
 
-### Description
+
+
+### Description 
+This application uses node.js and inquirer to generate a ReadMe using the command line interface.
 
 ### Installation
 
 ### Usage
 
+
 ### Test
 
 ### License
-
     Licensed under the MIT license.
 
-### Contact
+### Contributing
 
-For more information, visit my github: https://github.com/d
+
+### Contact
+For more information, visit my github: https://github.com/KatieThompson704
+
 OR
-Email me at: [thompsonkatherine704@gmail.com](mailto:thompsonkatherine704@gmail.com)
+
+If you would like to report issues or collaborate, please email me at: [ThompsonKatherine704@gmail.com](mailto:ThompsonKatherine704@gmail.com)
+

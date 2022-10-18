@@ -19,7 +19,7 @@ const questions = [
   {
     type: "input",
     message: "3. What are the Usage Instructions for this project?",
-    name: "instructions",
+    name: "usage",
   },
   {
     type: "list",
