@@ -26,10 +26,10 @@ const questions = [
     message: "4. What License is required for this project? ",
     choices: [
       "MIT",
-      "GPLv2",
-      "Apache",
-      "GPLv3",
-      "BSD 3-clause",
+      "APACHE 2.0",
+      "GPL 3.0",
+      "BSD 3",
+      "None",
       "Unlicensed",
       "Other",
     ],
@@ -47,17 +47,17 @@ const questions = [
   },
   {
     type: "input",
-    message: "7. ",
+    message: "7. What are the installation instructions?",
     name: "installation",
   },
   {
     type: "input",
-    message: "8. List any contributors to your project",
+    message: "8. List any contributors to your project: ",
     name: "contributing",
   },
   {
     type: "input",
-    message: "9.",
+    message: "9. What are the Test instructions for this application?",
     name: "test",
   },
 ];
