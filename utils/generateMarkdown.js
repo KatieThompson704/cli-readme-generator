@@ -45,6 +45,7 @@ ${renderLicenseBadge(data.license)}
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Contributing](#contributing)
 - [Test](#test)
 ${renderLicenseLink(data.license)}
 - [Contact](#contact)
@@ -62,6 +63,9 @@ ${data.projectdescription}
 ### Test
 
 ${renderLicenseSection(data.license)}
+
+### Contributing
+
 
 ### Contact
 For more information, visit my github: https://github.com/${data.username}
