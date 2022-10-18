@@ -3,8 +3,12 @@
 function renderLicenseBadge(license) {
   if (license === "MIT") {
     return "![MIT](https://img.shields.io/badge/license-MIT-blue)";
-  } else if (license === "GPLv2") {
-    return "![GPLv2](https://img.shields.io/badge/license-GPLv2-yellow)";
+  } else if (license === "APACHE 2.0") {
+    return "![APACHE 2.0](https://img.shields.io/badge/license-APACHE-2.0-yellow)";
+  } else if (license === "GPL 3.0") {
+    return "![GPL 3.0](https://img.shields.io/badge/license-GPLv3-brightgreen)";
+  } else if (license === "BSD 3") {
+    return "![BSD 3](https://img.shields.io/badge/license-BSDv3-yellow)";
   } else {
     return "";
   }
@@ -13,7 +17,7 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license === "Unlicensed" || license === "Other") {
+  if (license === "Unlicensed" || license === "Other" || license === "None") {
     return "";
   } else {
     return "- [License](#license)";
@@ -64,7 +68,9 @@ For more information, visit my github: https://github.com/${data.username}
 
 OR
 
-Email me at: [${data.email}](mailto:${data.email})
+If you would like to report issues or collaborate, please email me at: [${
+    data.email
+  }](mailto:${data.email})
 
 `;
 }
